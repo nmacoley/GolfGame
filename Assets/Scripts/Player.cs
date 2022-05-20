@@ -81,27 +81,27 @@ public class Player : MonoBehaviour
          
          _rigidbody.AddForce(forceDirection, ForceMode.Impulse);
       }
+      
    }
-   
    private void ProcessOnMouseHold()
-   {
+    {
       if (Input.GetMouseButton(0))
       {
-         _pingPongTime += Time.deltaTime;
-         _currentForce = Mathf.PingPong(ForceAcceleration * _pingPongTime, MaxForce);
-         
-         var cameraForward = MainCamera.transform.forward;
-         var playerPosition = transform.position;
-         var newPosition = playerPosition + new Vector3(
-            cameraForward.x,
-            0,
-            cameraForward.z
-         ) * _currentForce;
-         _lineRenderer.SetPosition(1, newPosition);
-         _lineRenderer.startColor = _lineRenderer.endColor = Color.Lerp(MinForceColor, MaxForceColor, _currentForce);
+        _pingPongTime += Time.deltaTime;
+
+        _currentForce = Mathf.PingPong(ForceAcceleration * _pingPongTime, MaxForce);
+
+        var cameraForward = MainCamera.transform.forward;
+        var playerPosition = transform.position;
+        var newPosition = playerPosition + new Vector3(
+          cameraForward.x,
+          0,
+          cameraForward.z
+        ) * _currentForce;
+        
+        _lineRenderer.SetPosition(1, newPosition);
+        _lineRenderer.startColor = _lineRenderer.endColor = Color.Lerp(MinForceColor, MaxForceColor, _currentForce);
       }
-      {
-         
-      }
-   }
+    }
+
 }
