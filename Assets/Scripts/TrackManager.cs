@@ -7,7 +7,6 @@ namespace BoundfoxStudios.MiniGolf._Game.Scripts
   {
     public Track[] Tracks;
     public Player Player;
-
     private int _currentTrack;
 
     private void Start()
@@ -16,6 +15,13 @@ namespace BoundfoxStudios.MiniGolf._Game.Scripts
       {
         Player.SpawnTo(Tracks[0].SpawnPoint.position);
       }
+    }
+
+    public void NextTrack()
+    {
+      _currentTrack = (_currentTrack + 1) % Tracks.Length;
+      
+      Player.SpawnTo(Tracks[_currentTrack].SpawnPoint.position);  
     }
   }
 }

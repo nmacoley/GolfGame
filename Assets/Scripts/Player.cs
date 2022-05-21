@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using BoundfoxStudios.MiniGolf._Game.Scripts;
 using Cinemachine;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour
 {
    public CinemachineVirtualCameraBase PlayerCamera;
    public Camera MainCamera;
+   public TrackManager TrackManager;
+   
    public float MaxForce = 1.5f;
    public float ForceAcceleration = 1.5f;
    public Color MinForceColor = Color.green;
@@ -19,7 +22,8 @@ public class Player : MonoBehaviour
    private LineRenderer _lineRenderer;
    private float _currentForce;
    private float _pingPongTime;
-   public bool _canShoot;
+   private bool _canShoot;
+   private float _timeInHole;
    
 
    private void Awake()
@@ -104,4 +108,33 @@ public class Player : MonoBehaviour
       }
     }
 
+   private void OnTriggerEnter(Collider other)
+   {
+      if (other.CompareTag("Hole"))
+      {
+         _timeInHole = 0;
+      }
+   }
+
+
+   private void OnTriggerStay(Collider other)
+   {
+      if (other.CompareTag("Hole"))
+      {
+         _timeInHole += Time.deltaTime;
+
+         if (_timeInHole > 1.5f)
+         {
+            TrackManager.NextTrack();
+         }
+      }
+   }
+
+   private void OnTriggerExit(Collider other)
+   {
+      if (other.CompareTag("Hole"))
+      {
+         _timeInHole = 0;
+      }
+   }
 }
