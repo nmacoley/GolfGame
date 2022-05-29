@@ -153,7 +153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462076600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3182011, y: 4.966, z: -1.785126}
+  m_LocalPosition: {x: 0.6855194, y: 5.117, z: -2.920627}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -297,8 +297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tracks:
-  - {fileID: 650700236}
   - {fileID: 1154543758}
+  - {fileID: 650700236}
   Player: {fileID: 770102063}
 --- !u!4 &589753881
 Transform:
@@ -339,7 +339,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624194417}
-  m_LocalRotation: {x: -0.028012877, y: 0.96669525, z: -0.12102083, w: -0.22376244}
+  m_LocalRotation: {x: 0.12339625, y: -0.11412567, z: 0.014287423, w: 0.9856696}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -866,7 +866,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770102060}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1186,8 +1186,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.03206764, y: 0.9643406, z: -0.13853817, w: -0.22321735}
-  m_LocalPosition: {x: 1.3182011, y: 4.966, z: -1.785126}
+  m_LocalRotation: {x: 0.14125744, y: -0.11384775, z: 0.016355488, w: 0.9832688}
+  m_LocalPosition: {x: 0.6855194, y: 5.117, z: -2.920627}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1359,7 +1359,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3551a5e57317aaf45b814d8015c5f7b3, type: 2}
+  - {fileID: 2100000, guid: f5eb07c5792d1af40b1a0e6381843b49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2130,7 +2130,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922442917}
-  m_LocalRotation: {x: -0.03206764, y: 0.9643406, z: -0.13853817, w: -0.2232174}
+  m_LocalRotation: {x: 0.14125744, y: -0.11384773, z: 0.016355483, w: 0.9832688}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2335,7 +2335,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977651544}
-  m_LocalRotation: {x: -0.036122542, y: 0.96166116, z: -0.15605612, w: -0.22259715}
+  m_LocalRotation: {x: 0.1591192, y: -0.11353139, z: 0.018423608, w: 0.98053676}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2573,11 +2573,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1517670712614897933, guid: a03dbdaedffc2d242aefed75c61a06db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.065999985
+      value: 0.08500004
       objectReference: {fileID: 0}
     - target: {fileID: 1517670712614897933, guid: a03dbdaedffc2d242aefed75c61a06db, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.48
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1517670712614897933, guid: a03dbdaedffc2d242aefed75c61a06db, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2607,6 +2607,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1517670712614897933, guid: a03dbdaedffc2d242aefed75c61a06db, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2180878926863963063, guid: a03dbdaedffc2d242aefed75c61a06db, type: 3}
       propertyPath: m_Name
       value: ball_red
@@ -2633,7 +2637,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953021576619583218}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2668,8 +2672,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 4.117, z: 0}
+  - {x: 0, y: 4.117, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

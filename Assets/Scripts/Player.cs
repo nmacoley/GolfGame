@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
 
    private void ProcessOnMouseDown()
    {
-      if (Input.GetMouseButtonDown(0))
+      if (Input.GetMouseButtonDown(0) | Input.GetKeyDown("joystick button 1"))
       {
          PlayerCamera.gameObject.SetActive(true);
 
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
    
    private void ProcessOnMouseUp()
    {
-      if (Input.GetMouseButtonUp(0))
+      if (Input.GetMouseButtonUp(0) | Input.GetKeyUp("joystick button 1"))
       {
          PlayerCamera.gameObject.SetActive(true);
          _lineRenderer.enabled = false;
@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
    }
    private void ProcessOnMouseHold()
     {
-      if (Input.GetMouseButton(0))
+      if (Input.GetMouseButton(0) | Input.GetKey("joystick button 1"))
       {
         _pingPongTime += Time.deltaTime;
 
