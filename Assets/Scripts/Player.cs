@@ -97,11 +97,7 @@ public class Player : MonoBehaviour
 
         var cameraForward = MainCamera.transform.forward;
         var playerPosition = transform.position;
-        var newPosition = playerPosition + new Vector3(
-          cameraForward.x,
-          0,
-          cameraForward.z
-        ) * _currentForce;
+        var newPosition = playerPosition + new Vector3(cameraForward.x, 0, cameraForward.z) * _currentForce;
         
         _lineRenderer.SetPosition(1, newPosition);
         _lineRenderer.startColor = _lineRenderer.endColor = Color.Lerp(MinForceColor, MaxForceColor, _currentForce);
