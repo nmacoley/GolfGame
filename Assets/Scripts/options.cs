@@ -10,17 +10,7 @@ public class options : MonoBehaviour
     public AudioSource audioSource;
     public Slider SliderVolume;
     public Text TextVolume;
-    bool visible = false;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            visible = !visible;
-            Panel.SetActive(visible);
-        }
-    }
-    
     public void SetResolution()
     {
         switch (DResolution.value)
@@ -60,11 +50,5 @@ public class options : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
-    }
-
-    public void ReturnToGame()
-    {
-        visible = !visible;
-        Panel.SetActive(visible);
     }
 }
