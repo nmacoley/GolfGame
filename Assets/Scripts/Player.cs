@@ -77,6 +77,8 @@ public class Player : MonoBehaviour
    {
       if (Input.GetMouseButtonUp(0) | Input.GetKeyUp("joystick button 1"))
       {
+         ScoreManager.instance.AddPoint();
+         
          PlayerCamera.gameObject.SetActive(true);
          _lineRenderer.enabled = false;
 
@@ -91,7 +93,7 @@ public class Player : MonoBehaviour
     {
       if (Input.GetMouseButton(0) | Input.GetKey("joystick button 1"))
       {
-        _pingPongTime += Time.deltaTime;
+         _pingPongTime += Time.deltaTime;
 
         _currentForce = Mathf.PingPong(ForceAcceleration * _pingPongTime, MaxForce);
 
