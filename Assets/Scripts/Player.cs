@@ -84,6 +84,7 @@ public class Player : MonoBehaviour
          var forceDirection = new Vector3(cameraForward.x, 0, cameraForward.z) * _currentForce;
          
          _rigidbody.AddForce(forceDirection, ForceMode.Impulse);
+
       }
       
    }

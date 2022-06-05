@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class ScoreHandler : MonoBehaviour
+public class ScoreHandler1 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] public TextMeshProUGUI ChangingScore;
+
+    private void ProcessOnMouseUp()
     {
-        
+        if (Input.GetMouseButtonUp(0) | Input.GetKeyUp("joystick button 1"))
+        {
+            ChangingScore.text = "test";
+
+        }
+
     }
+    /*private void IncreaseScore()
+    {
+
+        if (Input.GetMouseButtonUp(0) | Input.GetKeyUp("joystick button 1"))
+        {
+            ChangingScore.text = "test";
+        }
+    }*/
 }

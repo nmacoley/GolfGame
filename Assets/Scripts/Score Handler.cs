@@ -3,16 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ScoreHandler1 : MonoBehaviour
+public class ScoreHandler : MonoBehaviour
 {
 
-    public TextMeshProUGUI ChangingScore = 0;
+    public TextMeshProUGUI ChangingScore;
 
-    private void IncreaseScore()
+    private void ProcessOnMouseUp()
     {
-        if (Input.GetMouseButtonDown(0) | Input.GetKeyDown("joystick button 1"))
+        if (Input.GetMouseButtonUp(0) | Input.GetKeyUp("joystick button 1"))
         {
-            ChangingScore.Text = ChangingScore.Text + 1;
+            Debug.Log("Pressed left click.");
+            ChangingScore.text = "test";
         }
+
     }
+    /*private void IncreaseScore()
+    {
+
+        if (Input.GetMouseButtonUp(0) | Input.GetKeyUp("joystick button 1"))
+        {
+            ChangingScore.text = "test";
+        }
+    }*/
 }
