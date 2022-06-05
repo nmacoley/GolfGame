@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class options : MonoBehaviour
 {
-    public GameObject Panel;
-    public Dropdown DResolution;
+    public Dropdown dResolution;
     public AudioSource audioSource;
-    public Slider SliderVolume;
-    public Text TextVolume;
+    public Slider sliderVolume;
+    public Text textVolume;
 
     public void SetResolution()
     {
-        switch (DResolution.value)
+        switch (dResolution.value)
         {
             case 0:
                 Screen.SetResolution(640, 360, true);
@@ -43,12 +41,17 @@ public class options : MonoBehaviour
 
     public void SliderChanger()
     {
-        audioSource.volume = SliderVolume.value;
-        TextVolume.text = "Volume " + (audioSource.volume * 100).ToString("00") + "%";
+        audioSource.volume = sliderVolume.value;
+        textVolume.text = "Volume " + (audioSource.volume * 100).ToString("00") + "%";
     }
 
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }
