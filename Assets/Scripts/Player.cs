@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
    
    private Rigidbody _rigidbody;
    private LineRenderer _lineRenderer;
-   private float _currentForce;
+   private float _currentForce = 30f;
    private float _pingPongTime;
    private bool _canShoot;
    private float _timeInHole;
@@ -133,7 +133,4 @@ public class Player : MonoBehaviour
          _timeInHole = 0;
       }
    }
-   
-   
-   
 }
