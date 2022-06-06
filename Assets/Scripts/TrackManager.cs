@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace BoundfoxStudios.MiniGolf._Game.Scripts
 {
@@ -26,8 +26,18 @@ namespace BoundfoxStudios.MiniGolf._Game.Scripts
     public void NextTrack()
     {
       _currentTrack = (_currentTrack + 1) % Tracks.Length;
-      
-      Player.SpawnTo(Tracks[_currentTrack].SpawnPoint.position);
+      ScoreManager.instance.ResetScore();
+      Timer.Instance.ResetTimer();
+      Player.Instance.resetBallMovement();
+
+      if (_currentTrack == 5)
+      {
+        SceneManager.LoadScene("EndGame");
+      }
+      else
+      {
+        Player.SpawnTo(Tracks[_currentTrack].SpawnPoint.position);
+      }
     }
   }
 }

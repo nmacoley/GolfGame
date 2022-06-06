@@ -9,6 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class Player : MonoBehaviour
 {
+   public static Player Instance;
    public CinemachineVirtualCameraBase PlayerCamera;
    public Camera MainCamera;
    public TrackManager TrackManager;
@@ -24,10 +25,12 @@ public class Player : MonoBehaviour
    private float _pingPongTime;
    private bool _canShoot;
    private float _timeInHole;
+   private bool _canPlay = true;
    
 
    private void Awake()
    {
+      Instance = this;
       Cursor.lockState = CursorLockMode.Locked;
       
       _rigidbody = GetComponent<Rigidbody>();
@@ -45,10 +48,9 @@ public class Player : MonoBehaviour
    {
       _canShoot = _rigidbody.velocity.magnitude < 0.1f;
 
-      if (!_canShoot)
+      if (!_canShoot | !_canPlay)
       {
          return;
-         
       }
 
       _rigidbody.velocity = Vector3.zero;
@@ -134,5 +136,25 @@ public class Player : MonoBehaviour
       {
          _timeInHole = 0;
       }
+   }
+
+   public void CanPlay()
+   {
+      _canPlay = true;
+   }
+
+   public void CantPlay()
+   {
+      _canPlay = false;
+   }
+
+   public bool CanPlayerPlay()
+   {
+      return _canPlay;
+   }
+
+   public void resetBallMovement()
+   {
+      _rigidbody.velocity = Vector3.zero;
    }
 }

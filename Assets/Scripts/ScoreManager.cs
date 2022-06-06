@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,8 +22,11 @@ public class ScoreManager : MonoBehaviour
 
     public void AddPoint()
     {
-        score += 1;
-        scoreText.text = score.ToString() + " COUPS";
+        if (Player.Instance.CanPlayerPlay())
+        {
+            score += 1;
+            scoreText.text = score.ToString() + " COUPS";
+        }
     }
 
     public void ResetScore()
