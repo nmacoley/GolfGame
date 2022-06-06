@@ -13,6 +13,7 @@ public class Respawn : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        Player.Instance.resetBallMovement();
         player.transform.position = respawnPoint.transform.position;
     }
 }

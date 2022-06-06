@@ -1,16 +1,20 @@
-using System;
 using BoundfoxStudios.MiniGolf._Game.Scripts;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    public static Timer Instance;
     public float timeValue = 90;
     private float _waitingTimeValue = 5;
     private bool _next = false;
     public Text timeText;
     public GameObject gameOverPanel;
+    
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -51,15 +55,20 @@ public class Timer : MonoBehaviour
 
     private void GameOver()
     {
+        Player.Instance.CantPlay();
         gameOverPanel.SetActive(true);
         if (_next)
         {
+            Player.Instance.CanPlay();
             TrackManager.Instance.NextTrack();
-            timeValue = 90;
-            _waitingTimeValue = timeValue + 5;
-            _next = false;
-            ScoreManager.instance.ResetScore();
-            gameOverPanel.SetActive(false);
         }
+    }
+
+    public void ResetTimer()
+    {
+        timeValue = 90;
+        _waitingTimeValue = timeValue + 5;
+        _next = false;
+        gameOverPanel.SetActive(false);
     }
 }
