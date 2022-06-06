@@ -28,4 +28,10 @@ public class ScoreManager : MonoBehaviour
         score += 1;
         scoreText.text = score.ToString() + " COUPS";
     }
+
+    public void ResetScore()
+    {
+        score = 0;
+        scoreText.text = score.ToString() + " COUPS";
+    }
 }

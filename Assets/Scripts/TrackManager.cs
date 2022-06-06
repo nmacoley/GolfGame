@@ -8,6 +8,12 @@ namespace BoundfoxStudios.MiniGolf._Game.Scripts
     public Track[] Tracks;
     public Player Player;
     private int _currentTrack;
+    public static TrackManager Instance;
+
+    private void Awake()
+    {
+      Instance = this;
+    }
 
     private void Start()
     {
@@ -21,7 +27,7 @@ namespace BoundfoxStudios.MiniGolf._Game.Scripts
     {
       _currentTrack = (_currentTrack + 1) % Tracks.Length;
       
-      Player.SpawnTo(Tracks[_currentTrack].SpawnPoint.position);  
+      Player.SpawnTo(Tracks[_currentTrack].SpawnPoint.position);
     }
   }
 }
