@@ -13,7 +13,7 @@ public class GameOptions : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)| Input.GetKeyDown("joystick button 7"))
         {
             ShowOptions();
         }
