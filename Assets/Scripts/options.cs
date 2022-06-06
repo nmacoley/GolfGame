@@ -9,6 +9,11 @@ public class options : MonoBehaviour
     public Slider sliderVolume;
     public Text textVolume;
 
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
+
     public void SetResolution()
     {
         switch (dResolution.value)

@@ -30,7 +30,7 @@ namespace BoundfoxStudios.MiniGolf._Game.Scripts
       Timer.Instance.ResetTimer();
       Player.Instance.resetBallMovement();
 
-      if (_currentTrack == 4)
+      if (_currentTrack == 5)
       {
         SceneManager.LoadScene("EndGame");
       }
